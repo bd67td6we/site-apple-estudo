@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pi-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>X Videos</title>
+</head>
+<body>
+    <main class="cadastro-box">
+        <form class="form">
+            <h3>Faça seu cadastro</h3>
+            <div class="textfield">
+                <label>Nome:</label>
+                <input type="text" placeholder="Digite seu nome" />
+            </div>
+            <div class="textfield">
+                <label>Email:</label>
+                <input type="mail" placeholder="Digite seu e-mail" />
+            </div>
+            <div class="textfield">
+                <label>Senha:</label>
+                <input id="myInput" type="password" placeholder="Digite sua senha" />
+            </div>
+            <button type="button" id="toggleButton">Mostrar</button>
+            <button>Cadastrar</button>
+        </form>
+    </main>
+    <script>
+        const inputElement = document.getElementById('myInput');
+        const toggleButton = document.getElementById('toggleButton');
+
+        toggleButton.addEventListener('click', function() {
+            if (inputElement.type === 'password') {
+                inputElement.type = 'text';
+                toggleButton.textContent = 'Esconder';
+            } else {
+                inputElement.type = 'password';
+                toggleButton.textContent = 'Mostrar';
+            }
+        });
+    </script>
+</body>
+</html>

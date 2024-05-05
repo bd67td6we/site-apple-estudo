@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+body{
+    background: #e8e6e7;
+}
+header{
+    padding: 20px 70px;
+    background: #1d1d1f;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation .logo{
+    width: 50px;
+}
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.navigation ul li a{
+    color: #888;
+    font-weight: 600;
+    padding-bottom: 4px;
+    transition: all 0.5s ease-in-out;
+}
+.navigation ul li a:hover{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+.navigation .check{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+/*Main*/
+
+main section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 10rem;
+}
+.main-text img{
+    width: 15rem;
+    margin-bottom: 3vh;
+}
+.main-text h3{
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+.main-text p{
+    margin-bottom: 1.5rem;
+}
+.main-text h6{
+    color: #999;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+.main-text .btn{
+    padding: 10px 25px;
+    background: #0071e3;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.5s;
+}
+.main-text .btn:hover{
+    opacity: .85;
+}
+.main-text .text h5{
+    font-size: 1rem;
+    color: #444;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.main-text .content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-text .content span{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 1px #888;
+    transition: all 0.5s;
+}
+.main-text .content span:hover{
+    opacity: .80;
+}
+#green{
+    background: #384937;
+}
+#pink{
+    background: #f8ddd6;
+}
+#blue{
+    background: #225f7e;
+}
+#black{
+    background: #192028;
+}
+#white{
+    background: #f7f2ee;
+}
+#red{
+    background: #ae0617;
+}
+.main-img{
+    transition: all 1s ease;
+    z-index: 100;
+}
+.main-img img{
+    width: 500px;
+    transform: rotate(-7deg);
+}
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #445c42;
+    clip-path: circle(800px at right 1000px);
+}
+    </style>
+</head>
+<body>
+    
+
+    <header>
+        <nav class="navigation">
+            <a href="#"><img src="img/logo.png" alt="Logo do iPhone" class="logo"></a>
+            <ul>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">iPad</a></li>
+                <li><a href="#" class="check">iPhone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">AirPods</a></li>
+                <li><a href="#">Só na Apple</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="circle"></div>
+            <div class="main-text">
+                <img src="img/iphone13.png" alt="">
+                <h3>Seu novo superpoder.</h3>
+                <p>Chip com velocidade impressionante. Um aumento notável na duração da bateria. E novos recursos de foto e vídeo. <br> No iPhone 13, você faz coisas que nunca pôde. E ele ainda vem em dois tamanhos.</p>
+                <h6>A partir de R$ 6.599</h6>
+                <a href="#" class="btn">Comprar</a>
+                <div class="text">
+                   <h5>Escolha sua cor favorita:</h5>
+                </div>
+                <div class="content">
+                    <span id="green" onclick="imgSlider('img/green.png'); circleChange('#445c42')"></span>
+                    <span id="pink" onclick="imgSlider('img/pink.png'); circleChange('#ffc9cf')"></span>
+                    <span id="blue" onclick="imgSlider('img/blue.png'); circleChange('#0b839e')"></span>
+                    <span id="black" onclick="imgSlider('img/black.png'); circleChange('#092732')"></span>
+                    <span id="white" onclick="imgSlider('img/white.png');circleChange('#e0dbd7')"></span>
+                    <span id="red" onclick="imgSlider('img/red.png');circleChange('#cf4f68')"></span>
+                </div>
+            </div>
+            <div class="main-img">
+                <img src="img/green.png" alt="Imagem do iPhone" id="phone">
+            </div>
+        </section>
+    </main>
+
+
+    <script type="text/javascript">
+        /*Função de mudar o celular*/
+        function imgSlider(e){
+            document.querySelector('#phone').src = e;
+        }
+        /*Função de mudar a cor do circulo*/
+        function circleChange(color){
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+    </script>
+</body>
+</html>
